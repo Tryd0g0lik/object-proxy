@@ -1,0 +1,17 @@
+root = true
+
+[*]
+indent_style = tab
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_finale_newline = true
+
+[*.{js, css}]
+end_of_line = lf
+spaces_around_operators = true
+spaces_around_brackets = inside
+
+[*.js]
+curly_bracket_next_line = true
+
