@@ -1,23 +1,29 @@
+// const { values } = require("core-js/core/array");
 const obj = {
 	name: 'мечник',
 	health: 10,
 	level: 2,
 	attack: 80,
 	defence: 40,
-}
-function orderByProps(o, order) {
-	const objts = { ...o };
-	console.log('objts:' + objts);
+};
+const order = ["name", "level"];
 
-	let template = { keys: null, value: null };
-	const listObj = [];
-	for (let elemKeys in objts.keys) {
-		for (let elemValue in objts.values) {
-			templete.keys = elemKeys;
-			template.value = elemValue;
-			listObj.push(template);
+function orderByProps(obj, ord) { // Делаем мобильную ф-цию
+	const objts = { ...obj }; // делаем копию
+	const sortListObject = [];
+
+	for (const elem of ord) { // Сортироввка согласно указонного порядка
+		for (const [key, value] of Object.entries(objts)) {
+			if (elem === String(key)) {
+				sortListObject.push({ keys: key, values: value });
+				delete objts[elem];
+			}
 		}
 	}
-	console.log('listObj: ' + listObj);
+
+	for (const key of Object.keys(objts).sort()) { // сортировка по алфовиту
+		sortListObject.push({ keys: key, values: objts[key] }); // создаем список
+	}
+	return sortListObject;
 }
-orderByProps(obj, ["name", "level"])
+console.log(orderByProps(obj, order));

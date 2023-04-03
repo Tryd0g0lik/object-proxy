@@ -17,5 +17,16 @@
 			"LabeledStatement",
 			"WithStatement"
 		],
+		"linebreak-style": 0,
+		"no-tabs": [
+			"error",
+			{
+				"allowIndentationTabs": true
+			}
+		],
+		"indent": [
+			"error",
+			"tab"
+		]
 	}
 }
