@@ -1,12 +1,12 @@
 // const { values } = require("core-js/core/array");
-const obj = {
+const objs = {
 	name: 'мечник',
 	health: 10,
 	level: 2,
 	attack: 80,
 	defence: 40,
 };
-const order = ["name", "level"];
+const order = ['name', 'level'];
 
 function orderByProps(obj, ord) { // Делаем мобильную ф-цию
 	const objts = { ...obj }; // делаем копию
@@ -26,4 +26,4 @@ function orderByProps(obj, ord) { // Делаем мобильную ф-цию
 	}
 	return sortListObject;
 }
-console.log(orderByProps(obj, order));
+console.log(orderByProps(objs, order));
