@@ -4,13 +4,14 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isProduction = process.env.NODE_ENV == "production";
+// const isProduction = process.env.NODE_ENV == "production";
 
 const stylesHandler = isProduction
 	? MiniCssExtractPlugin.loader
 	: "style-loader";
 
-const config = {
+// const config = {
+module.exports = {
 	entry: "./src/index.js",
 	output: {
 		path: path.resolve(__dirname, "dist"),
@@ -44,13 +45,13 @@ const config = {
 	},
 };
 
-module.exports = () => {
-	if (isProduction) {
-		config.mode = "production";
+// module.exports = () => {
+// 	if (isProduction) {
+// 		config.mode = "production";
 
-		config.plugins.push(new MiniCssExtractPlugin());
-	} else {
-		config.mode = "development";
-	}
-	return config;
-};
+// 		config.plugins.push(new MiniCssExtractPlugin());
+// 	} else {
+// 		config.mode = "development";
+// 	}
+// 	return config;
+// };

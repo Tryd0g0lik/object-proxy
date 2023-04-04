@@ -9,8 +9,6 @@ shallow_clone: true
 clone_folder: ./src
 shallow_clone: true
 
-
-
 build: off
 cache: node_modules
 build_script:
