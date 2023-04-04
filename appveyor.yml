@@ -1,13 +1,12 @@
 version: '1.0.{build}'
 image: Visual Studio 2019 
 stack: node 18
-
-clone_folder: ./src
-shallow_clone: true
-
 branches:
   only:
     - master
+		
+clone_folder: ./src
+shallow_clone: true
 
 build: off
 cache: off
