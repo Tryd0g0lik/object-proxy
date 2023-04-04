@@ -1,10 +1,10 @@
 {
 	"name": "my-webpack-project",
 	"version": "1.0.0",
-	"main": "./index.js",
+	"main": "./src/index.js",
 	"scripts": {
 		"start": "webpack-dev-server --mode development",
-		"build": "webpack --mode production",
+		"build": "webpack  --mode production",
 		"lint": "eslint .",
 		"test": "jest",
 		"coverage": "jest --coverage",
@@ -12,9 +12,7 @@
 		"show:coverage": "live-server coverage/lcov-report",
 		"preshow:dist": "npm run build",
 		"show:dist": "live-server dist",
-		"bbl": "babel src -d dist",
-		"watch": "webpack --watch",
-		"serve": "webpack serve"
+		"bbl": "babel src -d dist"
 	},
 	"author": "coursar",
 	"license": "MIT",
