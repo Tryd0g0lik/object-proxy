@@ -6,7 +6,7 @@ branches:
     - master
 shallow_clone: true
 
-clone_folder: /src
+clone_folder: E:\Netologe\NetologeJavaScript2\object-proxy\src
 
 build: off
 cache: node_modules
