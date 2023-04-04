@@ -19,7 +19,7 @@ module.exports = {
 		}),
 
 		new MiniCssExtractPlugin({
-			filename: PATH_SRC + "/css/[name].css",
+			filename: "[name].css",
 			chunkFilename: "[id].css"
 		}),
 		// Add your plugins here
