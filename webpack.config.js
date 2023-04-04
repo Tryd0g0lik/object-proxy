@@ -2,21 +2,24 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const PATH_DIR = path.resolve(__dirname, "./dist");
+const PATH_SRC = path.resolve(_dirname, "./src");
+
 // const config = {
 module.exports = {
-	entry: "./src/index.js",
+	entry: PATH_SRC + "/index.js",
 	output: {
-		path: path.resolve(__dirname, "dist"),
+		path: PATH_DIR,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: "./src/index.html",
+			template: PATH_SRC + "/index.html",
 			filename: "./index.html"
 		}),
 
 		new MiniCssExtractPlugin({
-			template: "./src/[name].css",
-			filename: "[id].css"
+			filename: PATH_SRC + "/css/[name].css",
+			chunkFilename: "[id].css"
 		}),
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
@@ -24,7 +27,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(js|jsx)$/i,
+				test: /\.(js|jsx)$/,
 				loader: "babel-loader",
 			},
 			{
