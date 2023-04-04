@@ -4,7 +4,7 @@
 	"main": "./index.js",
 	"scripts": {
 		"start": "webpack-dev-server --mode development",
-		"build": "webpack --mode=production --node-env=production",
+		"build": "webpack --mode production",
 		"lint": "eslint .",
 		"test": "jest",
 		"coverage": "jest --coverage",
@@ -13,8 +13,6 @@
 		"preshow:dist": "npm run build",
 		"show:dist": "live-server dist",
 		"bbl": "babel src -d dist",
-		"build:dev": "webpack --mode=development",
-		"build:prod": "webpack --mode=production --node-env=production",
 		"watch": "webpack --watch",
 		"serve": "webpack serve"
 	},
