@@ -2,12 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-// const isProduction = process.env.NODE_ENV == "production";
-
-const stylesHandler = isProduction
-	? MiniCssExtractPlugin.loader
-	: "style-loader";
-
 // const config = {
 module.exports = {
 	entry: "./src/index.js",
@@ -16,9 +10,14 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: "index.html",
+			template: "./src/index.html",
+			filename: "./index.html"
 		}),
 
+		new MiniCssExtractPlugin({
+			template: "./src/[name].css",
+			filename: "[id].css"
+		}),
 		// Add your plugins here
 		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
 	],
@@ -30,7 +29,7 @@ module.exports = {
 			},
 			{
 				test: /\.css$/i,
-				use: [stylesHandler, "css-loader"],
+				use: [MiniCssExtractPlugin.loader, "css-loader"],
 			},
 			{
 				test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
