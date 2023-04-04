@@ -7,7 +7,7 @@ shallow_clone: true
 
 branches:
   only:
-    -master
+    - master
 
 build: off
 cache: off
