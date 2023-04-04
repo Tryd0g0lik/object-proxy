@@ -4,11 +4,10 @@ stack: node 18
 branches:
   only:
     - master
-clone_folder: ./src
 shallow_clone: true
 
 build: off
-cache: off
+cache: node_modules
 build_script:
   - npm run build
 
