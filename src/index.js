@@ -1,1 +1,2 @@
-console.log("Hello World!");
+import './js/[name].js';
+import './css/style.css';
