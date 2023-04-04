@@ -6,6 +6,9 @@ branches:
     - master
 shallow_clone: true
 
+install:
+  - npm install
+
 build: off
 cache: node_modules
 build_script:
