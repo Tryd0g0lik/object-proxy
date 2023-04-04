@@ -1,12 +1,13 @@
 const path = require("path");
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const PATH_DIR = path.resolve(__dirname, "./dist");
 const PATH_SRC = path.resolve(_dirname, "./src");
 
-// const config = {
-module.exports = {
+const config = {
+// module.exports = {
 	entry: PATH_SRC + "/index.js",
 	output: {
 		path: PATH_DIR,
@@ -55,3 +56,5 @@ module.exports = {
 // 	}
 // 	return config;
 // };
+
+export default config;
