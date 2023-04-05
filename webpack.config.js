@@ -1,22 +1,24 @@
 const path = require("path");
-const webpack = require('webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 const PATH_DIR = path.resolve(__dirname, ".\\dist");
 const PATH_SRC = path.resolve(__dirname, ".\\src");
 
-// const config = {
 module.exports = {
-	mode: "production",
-	entry: PATH_SRC + "/index.js",
+	mode: "development",
+	entry: PATH_SRC + "\\index.js",
 	output: {
 		path: PATH_DIR,
 	},
 	plugins: [
+		new ESLintPlugin({
+			files: PATH_SRC + "\\js",
+
+		}),
 		new HtmlWebpackPlugin({
-			template: PATH_SRC + "/index.html",
-			filename: "./index.html"
+			template: PATH_SRC + "\\index.html",
+			filename: ".\\index.html"
 		}),
 
 		new MiniCssExtractPlugin({
@@ -30,11 +32,22 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
-				loader: "babel-loader",
+				exclude: /node_modules/,
+				use: {
+					loader: "babel-loader",
+				}
 			},
 			{
 				test: /\.css$/i,
 				use: [MiniCssExtractPlugin.loader, "css-loader"],
+			},
+			{
+				test: /\.html$/,
+				use: [
+					{
+						loader: 'html-loader',
+					},
+				],
 			},
 			{
 				test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
