@@ -7,7 +7,6 @@ const PATH_DIR = path.resolve(__dirname, "./dist");
 const PATH_SRC = path.resolve(_dirname, "./src");
 
 const config = {
-// module.exports = {
 	entry: PATH_SRC + "/index.js",
 	output: {
 		path: PATH_DIR,
@@ -19,7 +18,7 @@ const config = {
 		}),
 
 		new MiniCssExtractPlugin({
-			filename: PATH_SRC + "/css/[name].css",
+			filename: "[name].css",
 			chunkFilename: "[id].css"
 		}),
 		// Add your plugins here
@@ -45,16 +44,5 @@ const config = {
 		],
 	},
 };
-
-// module.exports = () => {
-// 	if (isProduction) {
-// 		config.mode = "production";
-
-// 		config.plugins.push(new MiniCssExtractPlugin());
-// 	} else {
-// 		config.mode = "development";
-// 	}
-// 	return config;
-// };
 
 export default config;
