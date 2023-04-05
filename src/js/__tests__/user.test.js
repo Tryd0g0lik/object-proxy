@@ -1,17 +1,17 @@
 import { loadUser } from '../user';
 import { httpGet } from '../http';
-
-
+/* eslint-disable no-undef */
+/* eslint-disable import/extensions */
 jest.mock('../http');
 
 beforeEach(() => {
-  jest.resetAllMocks();
+	jest.resetAllMocks();
 });
 
 test('should call loadUser once', () => {
-  httpGet.mockReturnValue(JSON.stringify({}));
+	httpGet.mockReturnValue(JSON.stringify({}));
 
-  const response = loadUser(1);
-  expect(response).toEqual({});
-  expect(httpGet).toBeCalledWith('http://server:8080/users/1');
+	const response = loadUser(1);
+	expect(response).toEqual({});
+	expect(httpGet).toBeCalledWith('http://server:8080/users/1');
 });
