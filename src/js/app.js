@@ -8,7 +8,7 @@ const objs = {
 };
 const order = ['name', 'level'];
 
-function orderByProps(obj, ord) { // Делаем мобильную ф-цию
+export default function orderByProps(obj, ord) { // Делаем мобильную ф-цию
 	const objts = { ...obj }; // делаем копию
 	const sortListObject = [];
 
@@ -26,4 +26,3 @@ function orderByProps(obj, ord) { // Делаем мобильную ф-цию
 	}
 	return sortListObject;
 }
-console.log(orderByProps(objs, order));
