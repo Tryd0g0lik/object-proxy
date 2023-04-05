@@ -3,10 +3,11 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const PATH_DIR = path.resolve(__dirname, "./dist");
-const PATH_SRC = path.resolve(_dirname, "./src");
+const PATH_DIR = path.resolve(__dirname, ".\\dist");
+const PATH_SRC = path.resolve(__dirname, ".\\src");
 
-const config = {
+// const config = {
+module.exports = {
 	entry: PATH_SRC + "/index.js",
 	output: {
 		path: PATH_DIR,
@@ -44,5 +45,3 @@ const config = {
 		],
 	},
 };
-
-export default config;
