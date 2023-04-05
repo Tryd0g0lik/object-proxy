@@ -8,6 +8,7 @@ const PATH_SRC = path.resolve(__dirname, ".\\src");
 
 // const config = {
 module.exports = {
+	mode: "production",
 	entry: PATH_SRC + "/index.js",
 	output: {
 		path: PATH_DIR,

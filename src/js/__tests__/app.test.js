@@ -62,7 +62,7 @@ describe('app.js file will test', () => {
 	]);
 
 	aechDataTest('Test # %s', ({
-		a, b, c, expected,
+		b, c, expected,
 	}) => {
 		// console.log(orderByProps(b, c));
 		const orderByPropsTest = orderByProps(b, c);

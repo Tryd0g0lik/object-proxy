@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // const { values } = require("core-js/core/array");
 const objs = {
 	name: 'мечник',
