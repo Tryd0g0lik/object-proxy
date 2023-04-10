@@ -13,12 +13,10 @@ export default function orderByProps(obj, ord) { // Делаем мобильн�
 	const objts = { ...obj }; // делаем копию
 	const sortListObject = [];
 
-	for (const elem of ord) { // Сортироввка согласно указонного порядка
-		for (const [key, value] of Object.entries(objts)) {
-			if (elem === String(key)) {
-				sortListObject.push({ keys: key, values: value });
-				delete objts[elem];
-			}
+	for (let i = 0; i < ord.length; i += 1) {
+		if (objts[ord[i]]) {
+			sortListObject.push({ keys: ord[i], values: objts[ord[i]] });
+			delete objts[ord[i]];
 		}
 	}
 
