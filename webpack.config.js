@@ -19,7 +19,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: PATH_SRC + "\\index.html",
 			filename: ".\\index.html"
-		}),
+		}),	
 
 		new MiniCssExtractPlugin({
 			filename: "[name].css",
